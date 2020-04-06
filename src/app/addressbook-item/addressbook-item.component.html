@@ -1,0 +1,10 @@
+<p>addressbook-item component</p>
+<label for="contactInformation">Информация о контакте</label>
+<input type="text" class="form-control" id="contactInformation"
+      required
+      [(ngModel)]="item.contactInformation" name="contactInformation">
+<label for="hintInTheInputField">Подсказка в поле ввода</label>
+<input type="text" class="form-control" id="hintInTheInputField"
+      required
+      [(ngModel)]="item.hintInTheInputField" name="hintInTheInputField">
+<pre>{{JSON.stringify(item, null, 2)}}</pre>

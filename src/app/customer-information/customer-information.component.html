@@ -1,0 +1,36 @@
+<h2>AB Items</h2>
+<ul>
+  <li *ngFor="let item of items">
+    <app-addressbook-item [item]='item'>
+    </app-addressbook-item>
+  </li>  
+</ul>
+<form [formGroup]="addItemForm"
+  (ngSubmit)="onSubmit(addItemForm.value)">
+  <div>
+    <label for="contactInformation">
+      Информация о контакте
+    </label>
+    <select formControlName="contactInformation">
+      <option *ngFor="let contactProp of contactProps" [ngValue]="contactProp.name">
+        {{ contactProp.value }}
+      </option>
+    </select>
+    
+  </div>
+
+  <div>
+    <label for="hintInTheInputField">
+      Подсказка в поле ввода
+    </label>
+    <input id="hintInTheInputField" type="text" formControlName="hintInTheInputField">
+  </div>
+
+  <div>
+    <label for="isRequired">
+      Обязательное поле
+    </label>
+    <input id="isRequired" type="checkbox" formControlName="isRequired">
+  </div>
+  <button class="button" type="submit">Добавить</button>
+</form>
